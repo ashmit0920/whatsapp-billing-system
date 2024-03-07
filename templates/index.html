@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Form</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Send Billing Info to Customers</h1>
+
+    <div class="center">
+        <div class="container">
+            <h1>Enter Customer Information</h1>
+            <form action="/process_input" method="post">
+                <div class="form-group">
+                    <label for="phone_number">Phone Number:</label>
+                    <input type="text" id="phone_number" name="phone_number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="item">Item:</label>
+                    <input type="text" id="item" name="item" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" name="amount" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+
+            {% if success %}
+            <div class="success-message">
+                Successful
+            </div>
+            {% endif %}
+
+            {% if failed %}
+            <div class="failed-message">
+                Failed
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
